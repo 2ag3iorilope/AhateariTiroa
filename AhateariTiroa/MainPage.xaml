@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AhateariTiroa.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Grid RowDefinitions="Auto,*">
+        <!--  Barra superior  -->
+        <StackLayout
+            Padding="10"
+            BackgroundColor="LightGray"
+            Orientation="Horizontal">
+            <Button
+                x:Name="StartButton"
+                Clicked="StartGame_Clicked"
+                Text="Iniciar Juego" />
+            <Label
+                x:Name="ScoreLabel"
+                Margin="20,0,0,0"
+                Text="Puntuación: 0"
+                VerticalOptions="Center" />
+        </StackLayout>
+
+        <!--  Área de juego  -->
+        <AbsoluteLayout
+            x:Name="GameArea"
+            Grid.Row="1"
+            BackgroundColor="SkyBlue">
+            <AbsoluteLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTapped" />
+            </AbsoluteLayout.GestureRecognizers>
+        </AbsoluteLayout>
+    </Grid>
+
+</ContentPage>
